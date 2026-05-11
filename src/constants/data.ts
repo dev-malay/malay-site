@@ -46,7 +46,7 @@ export const PROJECTS_DATA = [
     stack: 'NodeJS, ExpressJS, Redis, MongoDB, ReactJS',
     link: '',
     github: '',
-    img: '/src/components/public/image copy.png',
+    img: '/src/components/public/horizon.png',
     status: 'Live'
   },
 ];
