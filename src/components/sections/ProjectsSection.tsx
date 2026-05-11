@@ -99,7 +99,7 @@ export function ProjectsSection() {
       {/* View More */}
       <div className="mt-10 flex justify-center">
         <a
-          href="https://github.com/dev-"
+          href="https://github.com/dev-malay"
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-2 text-zinc-400 hover:text-white text-xs font-normal transition-colors duration-200 border border-zinc-800 hover:border-zinc-600 px-4 py-2"
