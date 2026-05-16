@@ -1,13 +1,11 @@
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Calendar, Eye, Sun, Moon, Verified, Github, Twitter, Linkedin, MessageSquare, MoreHorizontal } from 'lucide-react';
+import { Mail, Eye, Sun, Moon, Verified, Github, Twitter, Linkedin, MessageSquare, MoreHorizontal } from 'lucide-react';
 import { GitHubCalendar } from 'react-github-calendar';
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
-import { Button } from '@/components/common';
 import { useTheme } from '@/context/ThemeContext';
 
-import avatar from "../public/avatar.jpg"
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, cloneElement, ReactNode, ReactElement } from 'react';
 
 const itemVariants = {
   hidden: { y: 10, opacity: 0 },
@@ -24,17 +22,17 @@ const STATUS_PHRASES = [
 
 export function AboutSection() {
   const { isLight, toggleTheme } = useTheme();
-  const [visitorCount, setVisitorCount] = React.useState<string>('…');
-  const [currentStatusIndex, setCurrentStatusIndex] = React.useState(0);
+  const [visitorCount, setVisitorCount] = useState<string>('…');
+  const [currentStatusIndex, setCurrentStatusIndex] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentStatusIndex((prev) => (prev + 1) % STATUS_PHRASES.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchCount = async () => {
       try {
 
@@ -74,7 +72,7 @@ export function AboutSection() {
       <div className="flex items-start gap-3 sm:gap-4">
         <div className="relative shrink-0">
           <img
-            src={avatar}
+            src="/avatar.jpg"
             alt="Avatar"
             className="w-14 h-14 sm:w-20 sm:h-20 rounded-full object-cover border border-zinc-900"
           />
@@ -158,8 +156,8 @@ export function AboutSection() {
             fontSize={12}
             blockSize={11}
             blockMargin={4}
-            hideColorLegend={false}
-            hideTotalCount={false}
+            // hideColorLegend={false}
+            // hideTotalCount={false}
             labels={{
               totalCount: '{{count}} activities in {{year}}',
             }}
@@ -173,7 +171,7 @@ export function AboutSection() {
               }).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
             }}
             renderBlock={(block, activity) => (
-              React.cloneElement(block as React.ReactElement, {
+              cloneElement(block as ReactElement, {
                 'data-tooltip-id': 'github-tooltip',
                 'data-tooltip-content': `${activity.count} contributions on ${activity.date}`,
               })
@@ -186,7 +184,7 @@ export function AboutSection() {
   );
 }
 
-function SocialPill({ icon, href }: { icon: React.ReactNode; href: string }) {
+function SocialPill({ icon, href }: { icon: ReactNode; href: string }) {
   return (
     <a 
       href={href}

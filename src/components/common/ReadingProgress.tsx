@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
 export function ReadingProgress() {
@@ -13,7 +13,7 @@ export function ReadingProgress() {
   const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
 
     const handleScroll = () => {
 
@@ -42,7 +42,7 @@ export function ReadingProgress() {
     <motion.div
       className="fixed top-0 left-0 right-0 h-[1px] bg-white origin-left z-[100]"
       style={{ 
-        scaleX: scrollYProgress,
+        scaleX,
         opacity: isVisible && isScrolling ? 1 : 0
       }}
       transition={{ opacity: { duration: 0.5 } }}

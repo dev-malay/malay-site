@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Pin, ArrowUpRight, Github } from 'lucide-react';
 import { PROJECTS_DATA } from '@/constants/data';

@@ -1,10 +1,11 @@
+import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { Divider, ReadingProgress } from '@/components/common';
 import { Header } from './Header';
 import { Footer } from './Footer';
 
 interface MainLayoutProps {
-  children: React.ReactNode;
+  children: ReactNode;
   showHeader?: boolean;
   showFooter?: boolean;
 }

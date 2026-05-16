@@ -37,7 +37,7 @@ export const PROJECTS_DATA = [
     stack: 'RAG, Python, NodeJS, MongoDB, QdrantCloud, GroqAI',
     link: 'https://huggingface.co/spaces/opusdev/vector-similarity-api',
     github: 'https://github.com/dev-malay/vector-similarity',
-    img: '/src/components/public/postmind.png',
+    img: '/postmind.png',
     status: 'Live'
   },
   { 
@@ -46,7 +46,7 @@ export const PROJECTS_DATA = [
     stack: 'NodeJS, ExpressJS, Redis, MongoDB, ReactJS',
     link: 'https://horizon-app-sable.vercel.app/',
     github: 'https://github.com/dev-malay/horizon-app',
-    img: '/src/components/public/horizon.png',
+    img: '/horizon.png',
     status: 'Live'
   },
 ];
