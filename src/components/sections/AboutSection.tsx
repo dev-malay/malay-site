@@ -41,7 +41,7 @@ export function AboutSection() {
           ? 'https://api.counterapi.dev/v1/devster-portfolio-malay/visits'
           : 'https://api.counterapi.dev/v1/devster-portfolio-malay/visits/up';
 
-        const res = await fetch(`${endpoint}?t=${Date.now()}`, { cache: 'no-store' });
+        const res = await fetch(endpoint, { cache: 'no-store' });
         const data = await res.json();
 
         if (!alreadyCounted) {
@@ -50,7 +50,8 @@ export function AboutSection() {
 
         const count: number = data.count ?? data.value ?? 0;
         setVisitorCount(count >= 1000 ? (count / 1000).toFixed(1) + 'k' : String(count));
-      } catch {
+      } catch (err) {
+        console.error('Visitor count error:', err);
         setVisitorCount('—');
       }
     };
