@@ -41,7 +41,7 @@ export function AboutSection() {
           ? 'https://api.counterapi.dev/v1/devster-portfolio-malay/visits'
           : 'https://api.counterapi.dev/v1/devster-portfolio-malay/visits/up';
 
-        const res = await fetch(endpoint);
+        const res = await fetch(`${endpoint}?t=${Date.now()}`, { cache: 'no-store' });
         const data = await res.json();
 
         if (!alreadyCounted) {
