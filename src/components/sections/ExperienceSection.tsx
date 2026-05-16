@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import { SectionTitle } from '@/components/common';
 import { EXPERIENCE_DATA } from '@/constants/data';
 
 const itemVariants = {

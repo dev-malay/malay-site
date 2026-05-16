@@ -1,4 +1,4 @@
-import { Mail, Eye, Sun, Moon, Verified, Github, Twitter, Linkedin, MessageSquare, MoreHorizontal } from 'lucide-react';
+import { Mail, Eye, Sun, Moon, Github } from 'lucide-react';
 import { GitHubCalendar } from 'react-github-calendar';
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
