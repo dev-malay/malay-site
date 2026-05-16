@@ -26,7 +26,7 @@ export const EXPERIENCE_DATA = [
     role: 'Software Engineer',
     date: 'May 2026 - Present',
     stack: 'TypeScript, Angular, C#, SQL',
-    desc: 'I’m currently working on the Cellera project, a banking software platform built with multiple interconnected services, where I contribute to developing and maintaining scalable backend systems, ensuring secure transactions, and improving the overall reliability and performance of financial operations across the platform',
+    desc: 'I’m currently working on the Bol project, a digital book software built with multiple interconnected services, where I contribute to developing and maintaining scalable backend systems, ensuring privacy, and improving the overall reliability and performance of confidential books across the platform',
   },
 ];
 
