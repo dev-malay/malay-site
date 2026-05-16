@@ -78,7 +78,7 @@ function ProjectItem({ name, desc, img, link, github, status }: ProjectItemProps
               rel="noopener noreferrer"
               className="text-zinc-500 hover:text-white transition-colors"
             >
-              <Github size={14} />
+              <Github size={16} />
             </a>
           )}
         </div>

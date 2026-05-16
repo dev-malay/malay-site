@@ -35,17 +35,17 @@ export const PROJECTS_DATA = [
     name: 'Postmind', 
     desc: 'Built a semantic vector search system using Sentence Transformers and Qdrant with RAG pipeline for personalized content suggestions.',
     stack: 'RAG, Python, NodeJS, MongoDB, QdrantCloud, GroqAI',
-    link: '',
-    github: '',
-    img: '/src/components/public/image.png',
+    link: 'https://huggingface.co/spaces/opusdev/vector-similarity-api',
+    github: 'https://github.com/dev-malay/vector-similarity',
+    img: '/src/components/public/postmind.png',
     status: 'Live'
   },
   { 
     name: 'Horizon', 
     desc: 'Real-time collaborative whiteboard with WebSockets, Redis caching, and sub-second latency for synchronized drawing.',
     stack: 'NodeJS, ExpressJS, Redis, MongoDB, ReactJS',
-    link: '',
-    github: '',
+    link: 'https://horizon-app-sable.vercel.app/',
+    github: 'https://github.com/dev-malay/horizon-app',
     img: '/src/components/public/horizon.png',
     status: 'Live'
   },
