@@ -16,12 +16,12 @@ export function ReadingProgress() {
     let timeout: NodeJS.Timeout;
 
     const handleScroll = () => {
-      // Show when scrolled a bit (more than 20px)
+
       if (window.scrollY > 20) {
         setIsVisible(true);
         setIsScrolling(true);
         
-        // Reset timer
+
         clearTimeout(timeout);
         timeout = setTimeout(() => {
           setIsScrolling(false);

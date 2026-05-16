@@ -6,10 +6,10 @@ export const NAVIGATION_LINKS = [
 ];
 
 export const SOCIAL_LINKS = [
-  { label: 'twitter/x', icon: 'https://img.icons8.com/ios-filled/50/000000/twitterx--v2.png', href: '#' },
-  { label: 'github', icon: 'https://img.icons8.com/ios-filled/50/000000/github.png', href: '#' },
+  { label: 'twitter/x', icon: 'https://img.icons8.com/ios-filled/50/000000/twitterx--v2.png', href: 'https://x.com/maxdev78' },
+  { label: 'github', icon: 'https://img.icons8.com/ios-filled/50/000000/github.png', href: 'https://github.com/dev-malay' },
   { label: 'linkedIn', icon: 'https://img.icons8.com/ios-filled/50/000000/linkedin.png', href: '#' },
-  { label: 'mail', icon: 'https://img.icons8.com/ios-filled/50/000000/mail.png', href: '#' },
+  { label: 'mail', icon: 'https://img.icons8.com/ios-filled/50/000000/mail.png', href: 'mailto:malayworkz@gmail.com' },
 ];
 
 export const EXPERIENCE_DATA = [

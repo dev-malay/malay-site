@@ -37,7 +37,7 @@ export function AboutSection() {
   React.useEffect(() => {
     const fetchCount = async () => {
       try {
-        // Use sessionStorage to avoid counting the same session multiple times
+
         const alreadyCounted = sessionStorage.getItem('visit_counted');
         const endpoint = alreadyCounted
           ? 'https://api.counterapi.dev/v1/devster-portfolio-malay/visits'
@@ -71,7 +71,6 @@ export function AboutSection() {
 
   return (
     <motion.section id="about" className="py-2 space-y-8" variants={itemVariants}>
-      {/* Header Area */}
       <div className="flex items-start gap-3 sm:gap-4">
         <div className="relative shrink-0">
           <img
@@ -82,12 +81,10 @@ export function AboutSection() {
         </div>
         
         <div className="flex-1 min-w-0 pt-1 sm:pt-3 flex flex-col justify-center">
-          {/* Top Row: Name */}
           <h1 className="text-[15px] sm:text-xl font-thin tracking-tight text-white group flex items-center gap-1.5 sm:gap-2 whitespace-nowrap mb-0.5 sm:mb-1">
             malay aka <span className="transition-transform duration-300 group-hover:translate-x-1">→</span> <a href="https://github.com/dev-malay" target="_blank" rel="noopener noreferrer" className="text-white no-underline hover:no-underline">maxdev</a>
           </h1>
-          
-          {/* Bottom Row: Status + Icons */}
+
           <div className="flex items-center justify-between gap-2">
             <div className="h-5 overflow-hidden flex-1 min-w-0">
               <AnimatePresence mode="wait">
@@ -121,7 +118,7 @@ export function AboutSection() {
         </div>
       </div>
 
-      {/* Bio Text */}
+
       <div className="space-y-4 max-w-[650px]">
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
          Product-driven Engineer who ships fast and cares deeply about craft. I turn ideas into polished products and focus on the details that make software alive. <span className="text-white font-thin">I get things done.</span>
@@ -131,7 +128,7 @@ export function AboutSection() {
         </p>
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
           <span className="text-white font-thin">5x</span> Hackathons. <span className="text-white font-thin"></span>  <span className="text-white font-thin">2x</span> Startup SWE. 
-          {/* each one worth the lessons. */}
+         
         </p>
        
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
@@ -139,23 +136,20 @@ export function AboutSection() {
         </p>
       </div>
 
-      {/* CTA Buttons */}
-
-
-      {/* Socials Section */}
+    
       <div className="space-y-3">
         <p className="text-zinc-500 text-sm font-normal">
           <span className="text-white font-thin underline decoration-zinc-700 underline-offset-4">→ socials</span>
         </p>
         <div className="flex flex-wrap gap-2">
-          <SocialPill icon={<Github size={18} />} />
-          <SocialPill icon={<XIcon />} />
-          <SocialPill icon={<Mail size={18} />} />
-          {/* <SocialPill icon={<Linkedin size={18} />} /> */}
+          <SocialPill icon={<Github size={18} />} href="https://github.com/dev-malay" />
+          <SocialPill icon={<XIcon />} href="https://x.com/maxdev78" />
+          <SocialPill icon={<Mail size={18} />} href="mailto:malayworkz@gmail.com" />
+         
         </div>
       </div>
 
-      {/* GitHub Activity Graph */}
+     
       <div className="pb-4">
         <div className="overflow-x-auto no-scrollbar font-thin">
           <GitHubCalendar
@@ -171,7 +165,6 @@ export function AboutSection() {
             }}
             blockRadius={0}
             transformData={(data) => {
-              // Deduplicate and sort data by date just in case
               const seen = new Set();
               return data.filter(item => {
                 if (seen.has(item.date)) return false;
@@ -193,11 +186,16 @@ export function AboutSection() {
   );
 }
 
-function SocialPill({ icon }: { icon: React.ReactNode }) {
+function SocialPill({ icon, href }: { icon: React.ReactNode; href: string }) {
   return (
-    <button className="flex items-center justify-center bg-transparent text-zinc-300 hover:text-white w-10 h-10 rounded-none border-none transition-all font-normal">
+    <a 
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center bg-transparent text-zinc-300 hover:text-white w-10 h-10 rounded-none border-none transition-all font-normal"
+    >
       {icon}
-    </button>
+    </a>
   );
 }
 

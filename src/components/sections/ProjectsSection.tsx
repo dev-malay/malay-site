@@ -23,15 +23,15 @@ function ProjectItem({ name, desc, img, link, github, status }: ProjectItemProps
 
   return (
     <div className="flex flex-col space-y-4">
-      {/* Visual Container */}
+
       <div className="relative aspect-[1.4/1] w-full bg-zinc-950/20 p-4 group">
-        {/* Inner Header */}
+
         <div className="flex justify-between items-center mb-4">
           <span className="text-[10px] text-zinc-500 uppercase tracking-widest font-normal">{name}</span>
           <Pin size={12} className="text-zinc-600 rotate-45 group-hover:text-zinc-400 transition-colors" />
         </div>
 
-        {/* Image Box */}
+
         <div className="relative h-[calc(100%-2rem)] w-full overflow-hidden bg-zinc-900/40">
           {img ? (
             <img
@@ -47,7 +47,7 @@ function ProjectItem({ name, desc, img, link, github, status }: ProjectItemProps
         </div>
       </div>
 
-      {/* Info Area */}
+
       <div className="space-y-3">
         <div className="flex justify-between items-center">
           <h3 className="text-white font-normal text-base tracking-tight">{name}</h3>
@@ -96,7 +96,7 @@ export function ProjectsSection() {
         ))}
       </div>
 
-      {/* View More */}
+
       <div className="mt-10 flex justify-center">
         <a
           href="https://github.com/dev-malay"

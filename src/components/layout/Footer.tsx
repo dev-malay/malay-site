@@ -7,15 +7,15 @@ export function Footer() {
       <Divider />
       
       <div className="mt-4 flex items-center justify-between w-full">
-        {/* Text Area (Left) */}
+
         <div className="flex flex-col items-start gap-1 opacity-60 text-left ">
           <p className=" tracking-widest font-thin">~ Developed with 🤍 by maxdev</p>
           <p className="font-thin uppercase">© 2026 malay </p>
         </div>
         
-        {/* Clickable Email Logo (Right, Medium Size) */}
+
         <a 
-          href="mailto:contact@example.com" 
+          href="mailto:malayworkz@gmail.com" 
           className="inline-block group shrink-0"
           title="Send me an email"
         >

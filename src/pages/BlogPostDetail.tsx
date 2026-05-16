@@ -68,7 +68,7 @@ export default function BlogPostDetail() {
               
             </p>
             <blockquote className="border-l border-zinc-800 pl-4 italic text-zinc-500 text-[10px]">
-              {/* "Software is a great combination between artistry and engineering." */}
+
             </blockquote>
             <p>
              

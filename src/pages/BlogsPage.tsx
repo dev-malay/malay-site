@@ -29,7 +29,7 @@ export default function BlogsPage() {
         animate="visible"
         className="py-12 space-y-10 min-h-[80vh]"
       >
-        {/* Back Button */}
+
         <div className="flex justify-start">
           <Link 
             to="/" 

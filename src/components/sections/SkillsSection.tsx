@@ -6,8 +6,7 @@ const itemVariants = {
   visible: { y: 0, opacity: 1 },
 };
 
-// Simple Icons slugs — raw logos, no background, official brand colors
-// color override (hex without #) forces a specific fill — needed for dark logos on dark bg
+
 const SKILL_ICONS: { label: string; slug: string; needsColorFlip?: boolean }[] = [
   { label: 'JavaScript', slug: 'javascript' },
   { label: 'TypeScript', slug: 'typescript' },
@@ -35,7 +34,7 @@ export function SkillsSection() {
     <motion.section id="skills" className="pt-6 pb-0" variants={itemVariants}>
       <div className="flex flex-wrap gap-5 items-center">
         {SKILL_ICONS.map(({ label, slug, needsColorFlip }) => {
-          // If the icon needs a color flip (e.g., Next.js), use black in light mode and white in dark mode.
+
           const iconColor = needsColorFlip ? (isLight ? '000000' : 'ffffff') : null;
 
           return (

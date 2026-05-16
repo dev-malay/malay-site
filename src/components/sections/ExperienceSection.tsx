@@ -33,7 +33,7 @@ function ExperienceItem({ company, role, date, stack, desc }: ExperienceItemProp
                 <h3 className="text-white font-thin text-base">
                   {company.split(' ')[0]}
                 </h3>
-                {/* Rectangular Full Blur Overlay */}
+
                 <div 
                   className="absolute inset-0 backdrop-blur-[12px] select-none pointer-events-none"
                   style={{ 
