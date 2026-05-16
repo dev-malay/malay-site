@@ -35,23 +35,19 @@ export function AboutSection() {
   useEffect(() => {
     const fetchCount = async () => {
       try {
-        const alreadyCounted = sessionStorage.getItem('visit_counted');
-        
-        // If first time in session, increment
-        if (!alreadyCounted) {
-          try {
-            await fetch('https://api.counterapi.dev/v1/devster-portfolio-malay/visits/up/');
-            sessionStorage.setItem('visit_counted', 'true');
-          } catch (e) {
-            console.error('Increment error:', e);
-          }
-        }
+        const alreadyCounted = sessionStorage.getItem('v_counted');
+        const endpoint = alreadyCounted
+          ? 'https://api.counterapi.dev/v1/malay-portfolio-2026-v1/vc'
+          : 'https://api.counterapi.dev/v1/malay-portfolio-2026-v1/vc/up';
 
-        // Always fetch the current count to display
-        const res = await fetch('https://api.counterapi.dev/v1/devster-portfolio-malay/visits/', { cache: 'no-store' });
+        const res = await fetch(endpoint, { cache: 'no-cache' });
         const data = await res.json();
 
-        const count: number = data.count ?? data.value ?? 0;
+        if (!alreadyCounted) {
+          sessionStorage.setItem('v_counted', 'true');
+        }
+
+        const count: number = data.count ?? 0;
         setVisitorCount(count >= 1000 ? (count / 1000).toFixed(1) + 'k' : String(count));
       } catch (err) {
         console.error('Visitor count error:', err);
