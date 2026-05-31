@@ -9,7 +9,7 @@ export function Footer() {
       <div className="mt-4 flex items-center justify-between w-full">
 
         <div className="flex flex-col items-start gap-1 opacity-60 text-left ">
-          <p className=" tracking-widest font-thin">~ Developed with 🤍 by maxdev</p>
+          <p className=" tracking-widest font-thin">~ Developed with 🤍 by max</p>
           <p className="font-thin uppercase">© 2026 malay </p>
         </div>
         
