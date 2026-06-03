@@ -119,7 +119,7 @@ export function AboutSection() {
 
       <div className="space-y-4 max-w-[650px]">
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
-         Product-driven Engineer who ships fast and cares deeply about craft. I turn ideas into polished products and focus on the details that make software alive. <span className="text-white font-thin">I get things done.</span>
+         Product-driven Engineer who ships fast and cares deeply about craft. I turn ideas into polished products and focus on the details that make software alive. <span className="text-white font-thin">I don't get lucky. I make my own luck.</span>
         </p>
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
           I’ve worked across multi agent systems, RAGs, full-stack platforms, and web apps. Mostly using Next.js, TypeScript, and whatever gets the job done.
