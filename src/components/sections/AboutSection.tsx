@@ -80,7 +80,7 @@ export function AboutSection() {
         
         <div className="flex-1 min-w-0 pt-1 sm:pt-3 flex flex-col justify-center">
           <h1 className="text-[15px] sm:text-xl font-thin tracking-tight text-white group flex items-center gap-1.5 sm:gap-2 whitespace-nowrap mb-0.5 sm:mb-1">
-            malay aka <span className="transition-transform duration-300 group-hover:translate-x-1">→</span> <a href="https://github.com/dev-malay" target="_blank" rel="noopener noreferrer" className="text-white no-underline hover:no-underline">max</a>
+            malay aka <span className="transition-transform duration-300 group-hover:translate-x-1">→</span> <a href="https://x.com/maxdev78" target="_blank" rel="noopener noreferrer" className="text-white no-underline hover:no-underline">max</a>
           </h1>
 
           <div className="flex items-center justify-between gap-2">
