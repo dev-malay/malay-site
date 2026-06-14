@@ -72,9 +72,9 @@ export function AboutSection() {
       <div className="flex items-start gap-3 sm:gap-4">
         <div className="relative shrink-0">
           <img
-            src="/avatar.jpg"
-            alt="Avatar"
-            className="w-14 h-14 sm:w-20 sm:h-20 rounded-full object-cover border border-zinc-900"
+            src="/max4.jpg"
+            alt="maxcodes"
+            className="w-14 h-14 sm:w-20 sm:h-20 rounded-2xl object-cover border border-zinc-900"
           />
         </div>
         
@@ -119,7 +119,7 @@ export function AboutSection() {
 
       <div className="space-y-4 max-w-[650px]">
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
-         Product-driven Engineer who ships fast and cares deeply about craft. I turn ideas into polished products and focus on the details that make software alive. <span className="text-white font-thin">I don't get lucky. I make my own luck.</span>
+         Product-driven Engineer who ships fast and cares deeply about craft. I turn ideas into polished products and focus on the details that make software alive. <span className="text-white font-thin italic">I don't get lucky. I make my own luck.</span>
         </p>
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
           I’ve worked across multi agent systems, RAGs, full-stack platforms, and web apps. Mostly using Next.js, TypeScript, and whatever gets the job done.
