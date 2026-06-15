@@ -22,7 +22,7 @@ export const EXPERIENCE_DATA = [
     
   },
   {
-    company: 'ProLogiciel Consulting',
+    company: 'ProLogiciel llp',
     role: 'Software Engineer',
     date: 'May 2026 - Present',
     stack: 'TypeScript, Angular, C#, SQL',
@@ -33,7 +33,7 @@ export const EXPERIENCE_DATA = [
 export const PROJECTS_DATA = [
   { 
     name: 'Postmind', 
-    desc: 'Built a semantic vector search system using Sentence Transformers and Qdrant with RAG pipeline for personalized content suggestions.',
+    desc: 'Built a semantic vector search system using Sentence Transformers and Qdrant with RAG pipeline for personalized content suggestions. along side smart ranking algorithm based on user interactions',
     stack: 'RAG, Python, NodeJS, MongoDB, QdrantCloud, GroqAI',
     link: 'https://huggingface.co/spaces/opusdev/vector-similarity-api',
     github: 'https://github.com/dev-malay/vector-similarity',

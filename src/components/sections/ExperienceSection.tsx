@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
-import { EXPERIENCE_DATA } from '@/constants/data';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import { EXPERIENCE_DATA } from "@/constants/data";
 
 const itemVariants = {
   hidden: { y: 10, opacity: 0 },
@@ -16,7 +16,13 @@ interface ExperienceItemProps {
   desc?: string;
 }
 
-function ExperienceItem({ company, role, date, stack, desc }: ExperienceItemProps) {
+function ExperienceItem({
+  company,
+  role,
+  date,
+  stack,
+  desc,
+}: ExperienceItemProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -29,20 +35,27 @@ function ExperienceItem({ company, role, date, stack, desc }: ExperienceItemProp
           <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
             <div className="flex items-center gap-1.5">
               <div className="relative inline-block group/blur overflow-hidden rounded-sm">
-                <h3 className="text-white font-thin text-base">
-                  {company.split(' ')[0]}
+                <h3
+                  className="text-white font-thin text-base select-none"
+                  style={{
+                    WebkitUserSelect: "none",
+                    WebkitTouchCallout: "none",
+                    userSelect: "none",
+                  }}
+                >
+                  {company.split(" ")[0]}
                 </h3>
 
-                <div 
+                <div
                   className="absolute inset-0 backdrop-blur-[12px] select-none pointer-events-none"
-                  style={{ 
-                    backgroundColor: 'rgba(9, 9, 11, 0.4)' 
+                  style={{
+                    backgroundColor: "rgba(9, 9, 11, 0.4)",
                   }}
                 />
               </div>
-              {company.split(' ').length > 1 && (
+              {company.split(" ").length > 1 && (
                 <h3 className="text-white font-thin text-base opacity-90">
-                  {company.split(' ').slice(1).join(' ')}
+                  {company.split(" ").slice(1).join(" ")}
                 </h3>
               )}
             </div>
@@ -73,14 +86,22 @@ function ExperienceItem({ company, role, date, stack, desc }: ExperienceItemProp
             <div className="pt-4 space-y-3">
               {stack && (
                 <div className="space-y-1">
-                  <p className="text-zinc-500 text-xs uppercase tracking-wider font-normal">Tech Stack</p>
-                  <p className="text-zinc-300 text-sm font-thin leading-relaxed">{stack}</p>
+                  <p className="text-zinc-500 text-xs uppercase tracking-wider font-normal">
+                    Tech Stack
+                  </p>
+                  <p className="text-zinc-300 text-sm font-thin leading-relaxed">
+                    {stack}
+                  </p>
                 </div>
               )}
               {desc && (
                 <div className="space-y-1">
-                  <p className="text-zinc-500 text-xs uppercase tracking-wider font-normal">Description</p>
-                  <p className="text-zinc-300 text-sm font-thin leading-relaxed">{desc}</p>
+                  <p className="text-zinc-500 text-xs uppercase tracking-wider font-normal">
+                    Description
+                  </p>
+                  <p className="text-zinc-300 text-sm font-thin leading-relaxed">
+                    {desc}
+                  </p>
                 </div>
               )}
             </div>
