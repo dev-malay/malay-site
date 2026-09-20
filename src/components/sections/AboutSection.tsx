@@ -1,11 +1,11 @@
-import { Mail, Eye, Sun, Moon, Github } from 'lucide-react';
+import { Mail, Sun, Moon, Github } from 'lucide-react';
 import { GitHubCalendar } from 'react-github-calendar';
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
 import { useTheme } from '@/context/ThemeContext';
 
 import { motion } from 'framer-motion';
-import { useState, useEffect, cloneElement, ReactNode, ReactElement } from 'react';
+import { cloneElement, ReactNode, ReactElement } from 'react';
 
 const itemVariants = {
   hidden: { y: 10, opacity: 0 },
@@ -14,32 +14,6 @@ const itemVariants = {
 
 export function AboutSection() {
   const { isLight, toggleTheme } = useTheme();
-  const [visitorCount, setVisitorCount] = useState<string>('…');
-
-  useEffect(() => {
-    const fetchCount = async () => {
-      try {
-        const alreadyCounted = sessionStorage.getItem('v_counted');
-        const endpoint = alreadyCounted
-          ? 'https://api.counterapi.dev/v1/malay-portfolio-2026-v1/vc'
-          : 'https://api.counterapi.dev/v1/malay-portfolio-2026-v1/vc/up';
-
-        const res = await fetch(endpoint, { cache: 'no-cache' });
-        const data = await res.json();
-
-        if (!alreadyCounted) {
-          sessionStorage.setItem('v_counted', 'true');
-        }
-
-        const count: number = data.count ?? 0;
-        setVisitorCount(count >= 1000 ? (count / 1000).toFixed(1) + 'k' : String(count));
-      } catch (err) {
-        console.error('Visitor count error:', err);
-        setVisitorCount('—');
-      }
-    };
-    fetchCount();
-  }, []);
 
   const githubTheme = isLight
     ? {
@@ -64,10 +38,6 @@ export function AboutSection() {
         </div>
 
         <div className="flex items-center gap-3 shrink-0">
-          <div className="flex items-center gap-1.5 text-zinc-500">
-            <Eye size={12} className="sm:w-4 sm:h-4" />
-            <span className="text-[10px] sm:text-xs font-normal">{visitorCount}</span>
-          </div>
           <button
             onClick={toggleTheme}
             title={isLight ? 'Switch to dark mode' : 'Switch to light mode'}

@@ -16,6 +16,8 @@ function ScrollToHash() {
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
+          // drop the #hash so the URL stays clean
+          window.history.replaceState(null, '', pathname);
         }, 0);
       }
     } else {

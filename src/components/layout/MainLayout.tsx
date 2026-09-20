@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { Divider, ReadingProgress } from '@/components/common';
+import { Divider } from '@/components/common';
 import { Header } from './Header';
 import { Footer } from './Footer';
 
@@ -24,7 +24,6 @@ export function MainLayout({ children, showHeader = true, showFooter = true }: M
 
   return (
     <div className="max-w-[800px] mx-auto px-4 md:px-10 border-x-0 md:border-x border-zinc-900 min-h-screen font-mono text-white text-sm bg-black">
-      <ReadingProgress />
       {showHeader && (
         <>
           <Header />
