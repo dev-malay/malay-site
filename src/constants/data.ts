@@ -32,20 +32,22 @@ export const EXPERIENCE_DATA = [
 
 export const PROJECTS_DATA = [
   { 
-    name: 'Postmind', 
-    desc: 'Built a semantic vector search system using Sentence Transformers and Qdrant with RAG pipeline for personalized content suggestions. along side smart ranking algorithm based on user interactions',
-    stack: 'RAG, Python, NodeJS, MongoDB, QdrantCloud, GroqAI',
-    link: 'https://huggingface.co/spaces/opusdev/vector-similarity-api',
-    github: 'https://github.com/dev-malay/vector-similarity',
+    name: 'meridian', 
+    tagline: 'reliable payment processing',
+    desc: 'Payment processing pipeline with a transactional outbox for reliable queueing - BullMQ priority queues, idempotent APIs with retries, a 30s reconciliation job, Prometheus metrics, OpenTelemetry tracing, and a realtime React dashboard.',
+    stack: 'TypeScript, Express, BullMQ, PostgreSQL, Redis, React, Prometheus, OpenTelemetry',
+    link: 'https://meridian-jet-beta.vercel.app/',
+    github: 'https://github.com/dev-malay/meridian',
     img: '/postmind.png',
     status: 'Live'
   },
   { 
-    name: 'Horizon', 
-    desc: 'Real-time collaborative whiteboard with WebSockets, Redis caching, and sub-second latency for synchronized drawing.',
-    stack: 'NodeJS, ExpressJS, Redis, MongoDB, ReactJS',
-    link: 'https://horizon-app-sable.vercel.app/',
-    github: 'https://github.com/dev-malay/horizon-app',
+    name: 'octane', 
+    tagline: 'perpetuals trading terminal',
+    desc: 'Perpetuals trading platform with an in-memory matching engine - limit/market orders, margin and liquidation engine, Binance-fed index prices over WebSockets, Redis Streams, Postgres persistence, and a realtime Hyperliquid-style trading.',
+    stack: 'Bun, TypeScript, Express, Redis Streams, PostgreSQL, Prisma, React, WebSockets, Turborepo',
+    link: 'https://octane-frontend-h2vz.vercel.app/',
+    github: 'https://github.com/dev-malay/octane',
     img: '/horizon.png',
     status: 'Live'
   },

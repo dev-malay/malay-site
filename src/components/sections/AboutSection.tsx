@@ -62,7 +62,7 @@ export function AboutSection() {
         </p>
        
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
-          <span className="text-white font-thin">Open to Work</span> ~ Full-Time, Freelance, or Collabs. DM on X
+          <span className="text-white font-thin">Open to Work</span> ~ Full-Time, Freelance, or Collabs.
         </p>
       </div>
 
