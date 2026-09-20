@@ -1,5 +1,6 @@
 export const NAVIGATION_LINKS = [
   { label: 'Experiences', href: '/#experience' },
+  { label: 'Open Source', href: '/#open-source' },
   { label: 'Projects', href: '/#projects' },
   { label: 'Skills', href: '/#skills' },
   { label: 'Blogs', href: '/blogs' },

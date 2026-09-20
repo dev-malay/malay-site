@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { MainLayout } from '@/components/layout';
-import { AboutSection, ExperienceSection, ProjectsSection, SkillsSection } from '@/components/sections';
+import { AboutSection, ExperienceSection, OpenSourceSection, ProjectsSection, SkillsSection } from '@/components/sections';
 import { Divider } from '@/components/common';
 import { ThemeProvider } from '@/context/ThemeContext';
 import BlogsPage from '@/pages/BlogsPage';
@@ -33,6 +33,8 @@ function HomePage() {
       <AboutSection />
       <Divider label="Experiences" />
       <ExperienceSection />
+      <Divider label="Open Source" />
+      <OpenSourceSection />
       <Divider label="Projects" />
       <ProjectsSection />
       <Divider label="Skills" />

@@ -4,7 +4,7 @@ import { Tooltip as ReactTooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css';
 import { useTheme } from '@/context/ThemeContext';
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState, useEffect, cloneElement, ReactNode, ReactElement } from 'react';
 
 const itemVariants = {
@@ -12,25 +12,9 @@ const itemVariants = {
   visible: { y: 0, opacity: 1 },
 };
 
-const STATUS_PHRASES = [
-  "SOFTWARE DEVELOPER",
-  "INDIE HACKER",
-  "OPEN FOR SIDE QUESTS",
-  "HUNTING GIGS",
-  "OPEN FOR FREELANCING"
-];
-
 export function AboutSection() {
   const { isLight, toggleTheme } = useTheme();
   const [visitorCount, setVisitorCount] = useState<string>('…');
-  const [currentStatusIndex, setCurrentStatusIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentStatusIndex((prev) => (prev + 1) % STATUS_PHRASES.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     const fetchCount = async () => {
@@ -69,57 +53,35 @@ export function AboutSection() {
 
   return (
     <motion.section id="about" className="py-2 space-y-8" variants={itemVariants}>
-      <div className="flex items-start gap-3 sm:gap-4">
-        <div className="relative shrink-0">
-          <img
-            src="/max4.jpg"
-            alt="maxcodes"
-            className="w-14 h-14 sm:w-20 sm:h-20 rounded-2xl object-cover border border-zinc-900"
-          />
-        </div>
-        
-        <div className="flex-1 min-w-0 pt-1 sm:pt-3 flex flex-col justify-center">
-          <h1 className="text-[15px] sm:text-xl font-thin tracking-tight text-white group flex items-center gap-1.5 sm:gap-2 whitespace-nowrap mb-0.5 sm:mb-1">
-            malay aka <span className="transition-transform duration-300 group-hover:translate-x-1">→</span> <a href="https://x.com/maxdev78" target="_blank" rel="noopener noreferrer" className="text-white no-underline hover:no-underline">max</a>
+      <div className="flex items-center justify-between gap-3">
+        <div className="hero-shine min-w-0 flex flex-col gap-0.5">
+          <h1 className="name-shine font-mono text-2xl sm:text-3xl font-medium tracking-tight leading-none m-0">
+            malay
           </h1>
+          <p className="sub-shine font-mono text-[11px] sm:text-sm font-normal leading-none whitespace-nowrap truncate m-0">
+            max_codes · wired in · ai & infra
+          </p>
+        </div>
 
-          <div className="flex items-center justify-between gap-2">
-            <div className="h-5 overflow-hidden flex-1 min-w-0">
-              <AnimatePresence mode="wait">
-                <motion.p
-                  key={currentStatusIndex}
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -20, opacity: 0 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="text-zinc-500 text-[10px] sm:text-sm font-normal whitespace-nowrap truncate"
-                >
-                  {STATUS_PHRASES[currentStatusIndex]}
-                </motion.p>
-              </AnimatePresence>
-            </div>
-            
-            <div className="flex items-center gap-3 shrink-0 pb-1">
-              <div className="flex items-center gap-1.5 text-zinc-500">
-                <Eye size={12} className="sm:w-4 sm:h-4" />
-                <span className="text-[10px] sm:text-xs font-normal">{visitorCount}</span>
-              </div>
-              <button
-                onClick={toggleTheme}
-                title={isLight ? 'Switch to dark mode' : 'Switch to light mode'}
-                className="text-zinc-500 hover:text-white transition-colors flex items-center"
-              >
-                {isLight ? <Moon size={12} className="sm:w-4 sm:h-4" /> : <Sun size={12} className="sm:w-4 sm:h-4" />}
-              </button>
-            </div>
+        <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-1.5 text-zinc-500">
+            <Eye size={12} className="sm:w-4 sm:h-4" />
+            <span className="text-[10px] sm:text-xs font-normal">{visitorCount}</span>
           </div>
+          <button
+            onClick={toggleTheme}
+            title={isLight ? 'Switch to dark mode' : 'Switch to light mode'}
+            className="text-zinc-500 hover:text-white transition-colors flex items-center"
+          >
+            {isLight ? <Moon size={12} className="sm:w-4 sm:h-4" /> : <Sun size={12} className="sm:w-4 sm:h-4" />}
+          </button>
         </div>
       </div>
 
 
       <div className="space-y-4 max-w-[650px]">
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
-         Product-driven Engineer who ships fast and cares deeply about craft. I turn ideas into polished products and focus on the details that make software alive. <span className="text-white font-thin italic">I don't get lucky. I make my own luck.</span>
+         Product-driven Engineer who ships fast and cares deeply about craft. I turn ideas into polished products and focus on the details that make software alive.
         </p>
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
           I’ve worked across multi agent systems, RAGs, full-stack platforms, and web apps. Mostly using Next.js, TypeScript, and whatever gets the job done.
@@ -130,7 +92,7 @@ export function AboutSection() {
         </p>
        
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
-          <span className="text-white font-thin">Open to Work</span> ~ Full-Time, Freelance, or Collaborations. DM on X
+          <span className="text-white font-thin">Open to Work</span> ~ Full-Time, Freelance, or Collabs. DM on X
         </p>
       </div>
 
