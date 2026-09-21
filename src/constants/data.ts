@@ -14,19 +14,41 @@ export const SOCIAL_LINKS = [
 
 export const EXPERIENCE_DATA = [
   {
+    company: 'Prologiciel Consulting',
+    role: 'Software Engineer',
+    date: 'May 2026 - Present',
+    sections: [
+      {
+        heading: 'Bol - Leidener digital book system',
+        points: [
+          'Built Journal Publisher backend APIs in C# with a TypeScript frontend for secure PDF publishing, Stripe payments, and encrypted .ldb downloads.',
+          'Developed book-sampling algorithms across TXT, DOCX, ToC, HTML, and .ldb formats.',
+          'Engineered .ldb distribution with auth codes, device binding, and access verification — books open only in BOL Browser.',
+          'Contributed to the BOL Browser desktop app (C#, MySQL) with keyboard navigation, nested pages, and a 7-step InR workflow for device migration and book replacement.',
+        ],
+      },
+      {
+        heading: 'CELER - Health Care',
+        points: [
+          'Built route optimization with Google Maps integration; validated addresses across Florida hubs, lifting deliveries per shift by 20–30%.',
+          'Fixed package idempotency in the driver app with barcode-based state management; deduplicated same-day multi-orders into single routes.',
+          'Designed multi-tenant admin dashboard (Angular, TypeScript) for hubs, drivers, vehicles, routes, and billing with realtime asset tracking.',
+        ],
+      },
+    ],
+  },
+  {
     company: 'Dione Apps',
     role: 'Backend Engineer',
     date: 'Dec 2025 - April 2026',
-    stack: 'RAG, Python, NodeJS, ExpressJS, MongoDB, Qdrant Cloud, React, VectorEmbedding',
-    desc: 'Contributed to building a robust backend infrastructure to support the shop feature’s product management, ensuring efficient data retrieval and structured JSON responses for the frontend, while also improving data integrity and performance by designing normalized database schemas for the marketplace and reducing query complexity for product filtering and search',
-    
-  },
-  {
-    company: 'ProLogiciel llp',
-    role: 'Software Engineer',
-    date: 'May 2026 - Present',
-    stack: 'TypeScript, Angular, C#, SQL',
-    desc: 'I’m currently working on the Bol project, a digital book software built with multiple interconnected services, where I contribute to developing and maintaining scalable backend systems, ensuring privacy, and improving the overall reliability and performance of confidential books across the platform',
+    sections: [
+      {
+        points: [
+          'Built Instagram-like feed ranking on Qdrant Cloud embeddings with interaction-based scoring; optimized Node.js/Express backend with PostgreSQL and Redis.',
+          'Engineered eShop feature turning social accounts into shops; product APIs on normalized schemas cutting query complexity by 40%.',
+        ],
+      },
+    ],
   },
 ];
 
@@ -79,24 +101,10 @@ export const SKILLS_DATA = [
 ];
 
 export const BLOGS_DATA = [
-  { 
+  {
     id: '1',
-    slug: 'context-rot',
-    title: 'AI ~ By maxdev', 
-    date: 'coming soon',
-    content: ''
-  },
-  { 
-    id: '2',
-    slug: '$ perpetual perspective  ',
-    title: 'perpetual perspective ~ $', 
-    date: 'coming soon',
-    content: ''
-  },
-  { 
-    id: '3',
-    slug: 'rag-architecture',
-    title: 'CRAGS', 
+    slug: 'working-on-it',
+    title: 'working on it',
     date: 'coming soon',
     content: ''
   },
