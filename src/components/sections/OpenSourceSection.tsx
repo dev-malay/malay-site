@@ -214,11 +214,11 @@ export function OpenSourceSection() {
   return (
     <motion.section
       id="open-source"
-      className="py-10"
+      className="py-4"
       variants={itemVariants}
     >
       {loading && items.length === 0 ? (
-        <div className="space-y-8" aria-label="loading">
+        <div className="space-y-6" aria-label="loading">
           {[0, 1].map((g) => (
             <div key={g}>
               <div className="mb-1 h-3 w-32 animate-pulse bg-zinc-900" />
@@ -250,7 +250,7 @@ export function OpenSourceSection() {
           no contributions found.
         </p>
       ) : (
-        <div className="space-y-8">
+        <div className="space-y-6">
           {groups.map((group) => (
             <div key={group.repo}>
               <h2 className="mb-1 font-mono text-xs font-normal text-zinc-500">
@@ -297,7 +297,7 @@ export function OpenSourceSection() {
         <p className="mt-6 font-mono text-[11px] text-zinc-600">{error}</p>
       )}
 
-      <div className="mt-8 flex justify-start">
+      <div className="mt-2 flex justify-start">
         <a
           href={`https://github.com/search?q=author%3A${GITHUB_USERNAME}+type%3Apr&type=pullrequests`}
           target="_blank"

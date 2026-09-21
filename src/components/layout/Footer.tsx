@@ -5,7 +5,7 @@ import type { ReactNode } from 'react';
 export function Footer() {
   return (
     <footer className="pt-0 pb-6 px-0 font-mono font-thin text-xs tracking-widest w-full">
-      <Divider label="in the bay? coffee." />
+      <Divider label="coffee??" />
 
       <p className="mt-4 max-w-full text-left font-thin text-white">
         always down to meet people building interesting things. ai, agent infra, open source, startups.
@@ -14,7 +14,7 @@ export function Footer() {
       <div className="mt-4 flex items-center justify-between w-full">
         <p className="font-thin uppercase text-white">© 2026 malay</p>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-0">
           <SocialPill icon={<Github size={18} />} href="https://github.com/dev-malay" />
           <SocialPill icon={<XIcon />} href="https://x.com/maxdev78" />
           <SocialPill icon={<Mail size={18} />} href="mailto:malayworkz@gmail.com" />
