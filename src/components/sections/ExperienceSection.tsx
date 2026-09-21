@@ -8,60 +8,40 @@ const itemVariants = {
   visible: { y: 0, opacity: 1 },
 };
 
+interface ExperienceBlock {
+  heading?: string;
+  points: string[];
+}
+
 interface ExperienceItemProps {
   company: string;
   role: string;
   date: string;
-  stack?: string;
-  desc?: string;
+  sections: ExperienceBlock[];
 }
 
 function ExperienceItem({
   company,
   role,
   date,
-  stack,
-  desc,
+  sections,
 }: ExperienceItemProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="mb-6 border-b border-zinc-900 pb-6 last:border-0 last:pb-0 last:mb-0">
+    <div className="mb-3 border-b border-zinc-900 pb-4 last:border-0 last:pb-0 last:mb-0">
       <div
         className="flex justify-between items-start cursor-pointer group"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <div className="flex-1">
-          <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-1">
-            <div className="flex items-center gap-1.5">
-              <div className="relative inline-block group/blur overflow-hidden rounded-sm">
-                <h3
-                  className="text-white font-thin text-base select-none"
-                  style={{
-                    WebkitUserSelect: "none",
-                    WebkitTouchCallout: "none",
-                    userSelect: "none",
-                  }}
-                >
-                  {company.split(" ")[0]}
-                </h3>
-
-                <div
-                  className="absolute inset-0 backdrop-blur-[12px] select-none pointer-events-none"
-                  style={{
-                    backgroundColor: "rgba(9, 9, 11, 0.4)",
-                  }}
-                />
-              </div>
-              {company.split(" ").length > 1 && (
-                <h3 className="text-white font-thin text-base opacity-90">
-                  {company.split(" ").slice(1).join(" ")}
-                </h3>
-              )}
-            </div>
-            <span className="text-zinc-300 text-sm font-thin">{date}</span>
+          <div className="flex flex-row justify-between items-baseline gap-3 mb-1">
+            <h3 className="font-sans text-[15px] font-medium tracking-tight text-zinc-100">
+              {company}
+            </h3>
+            <span className="text-zinc-300 text-sm font-extralight font-sans shrink-0">{date}</span>
           </div>
-          <p className="text-zinc-400 text-sm font-thin">{role}</p>
+          <p className="text-zinc-400 text-[13px] font-thin">{role}</p>
         </div>
         <div className="ml-4 pt-1">
           <motion.div
@@ -83,27 +63,27 @@ function ExperienceItem({
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="pt-4 space-y-3">
-              {stack && (
-                <div className="space-y-1">
-                  <p className="text-zinc-500 text-xs uppercase tracking-wider font-normal">
-                    Tech Stack
-                  </p>
-                  <p className="text-zinc-300 text-sm font-thin leading-relaxed">
-                    {stack}
-                  </p>
+            <div className="pt-4 space-y-4">
+              {sections.map((sec, i) => (
+                <div key={i} className="space-y-2">
+                  {sec.heading && (
+                    <p className="text-zinc-200 text-sm font-normal">
+                      {sec.heading}
+                    </p>
+                  )}
+                  <ul className="space-y-2">
+                    {sec.points.map((pt, j) => (
+                      <li
+                        key={j}
+                        className="flex gap-2.5"
+                      >
+                        <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-600" />
+                        <p className="text-zinc-400 text-[13px] leading-relaxed font-thin">{pt}</p>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              )}
-              {desc && (
-                <div className="space-y-1">
-                  <p className="text-zinc-500 text-xs uppercase tracking-wider font-normal">
-                    Description
-                  </p>
-                  <p className="text-zinc-300 text-sm font-thin leading-relaxed">
-                    {desc}
-                  </p>
-                </div>
-              )}
+              ))}
             </div>
           </motion.div>
         )}
@@ -114,7 +94,7 @@ function ExperienceItem({
 
 export function ExperienceSection() {
   return (
-    <motion.section id="experience" className="py-10" variants={itemVariants}>
+    <motion.section id="experience" className="py-4" variants={itemVariants}>
       <div className="">
         {EXPERIENCE_DATA.map((exp, idx) => (
           <ExperienceItem key={idx} {...exp} />
