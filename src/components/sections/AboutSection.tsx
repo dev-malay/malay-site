@@ -51,10 +51,10 @@ export function AboutSection() {
 
       <div className="space-y-4 max-w-[650px]">
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
-         Product-driven Engineer who ships fast and cares deeply about craft. I turn ideas into polished products and focus on the details that make software alive.
+         I build software that feels alive - on to making ideas shippable, with an obsession for the details most people never notice but everyone feels.
         </p>
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
-          I’ve worked across multi agent systems, RAGs, full-stack platforms, and web apps. Mostly using Next.js, TypeScript, and whatever gets the job done.
+          My range runs from multi-agent systems and RAG pipelines to full-stack AI/web apps. Day to day it's Next.js and TypeScript, plus whatever gets the job done.
         </p>
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
           <span className="text-white font-thin">5x</span> Hackathons. <span className="text-white font-thin"></span>  <span className="text-white font-thin">2x</span> Startup SWE. 
@@ -62,7 +62,7 @@ export function AboutSection() {
         </p>
        
         <p className="text-zinc-400 text-sm leading-relaxed font-thin">
-          <span className="text-white font-thin">Open to Work</span> ~ Full-Time, Freelance, or Collabs.
+          <span className="text-white font-thin">Available for</span> ~ Full-Time, Freelance, or Collabs.
         </p>
       </div>
 
@@ -73,7 +73,7 @@ export function AboutSection() {
         </p>
         <div className="flex flex-wrap gap-2">
           <SocialPill icon={<Github size={18} />} href="https://github.com/dev-malay" />
-          <SocialPill icon={<XIcon />} href="https://x.com/maxdev78" />
+          <SocialPill icon={<XIcon />} href="https://x.com/max_codes" />
           <SocialPill icon={<Mail size={18} />} href="mailto:malayworkz@gmail.com" />
          
         </div>

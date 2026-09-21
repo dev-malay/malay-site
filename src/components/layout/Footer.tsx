@@ -16,7 +16,7 @@ export function Footer() {
 
         <div className="flex items-center gap-0">
           <SocialPill icon={<Github size={18} />} href="https://github.com/dev-malay" />
-          <SocialPill icon={<XIcon />} href="https://x.com/maxdev78" />
+          <SocialPill icon={<XIcon />} href="https://x.com/max_codes" />
           <SocialPill icon={<Mail size={18} />} href="mailto:malayworkz@gmail.com" />
         </div>
       </div>
