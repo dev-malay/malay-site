@@ -1,11 +1,11 @@
 import { Mail, Sun, Moon, Github } from 'lucide-react';
-import { GitHubCalendar } from 'react-github-calendar';
-import { Tooltip as ReactTooltip } from 'react-tooltip';
-import 'react-tooltip/dist/react-tooltip.css';
+// import { GitHubCalendar } from 'react-github-calendar';
+// import { Tooltip as ReactTooltip } from 'react-tooltip';
+// import 'react-tooltip/dist/react-tooltip.css';
 import { useTheme } from '@/context/ThemeContext';
 
 import { motion } from 'framer-motion';
-import { cloneElement, ReactNode, ReactElement } from 'react';
+import { ReactNode } from 'react';
 
 const itemVariants = {
   hidden: { y: 10, opacity: 0 },
@@ -15,15 +15,15 @@ const itemVariants = {
 export function AboutSection() {
   const { isLight, toggleTheme } = useTheme();
 
-  const githubTheme = isLight
-    ? {
-        light: ['#e8e8e8', '#b6e5c8', '#6cc68c', '#37a75c', '#1a7a3c'],
-        dark:  ['#e8e8e8', '#b6e5c8', '#6cc68c', '#37a75c', '#1a7a3c'],
-      }
-    : {
-        light: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
-        dark:  ['#09090b', '#18181b', '#27272a', '#3f3f46', '#52525b'],
-      };
+  // const githubTheme = isLight
+  //   ? {
+  //       light: ['#e8e8e8', '#b6e5c8', '#6cc68c', '#37a75c', '#1a7a3c'],
+  //       dark:  ['#e8e8e8', '#b6e5c8', '#6cc68c', '#37a75c', '#1a7a3c'],
+  //     }
+  //   : {
+  //       light: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
+  //       dark:  ['#09090b', '#18181b', '#27272a', '#3f3f46', '#52525b'],
+  //     };
 
   return (
     <motion.section id="about" className="py-2 space-y-8" variants={itemVariants}>
@@ -79,7 +79,8 @@ export function AboutSection() {
         </div>
       </div>
 
-     
+      
+      {/* github heatmap commented out
       <div className="pb-4">
         <div className="overflow-x-auto no-scrollbar font-thin">
           <GitHubCalendar
@@ -112,6 +113,7 @@ export function AboutSection() {
           <ReactTooltip id="github-tooltip" place="top" />
         </div>
       </div>
+      */}
     </motion.section>
   );
 }
