@@ -54,6 +54,14 @@ export const EXPERIENCE_DATA = [
 
 export const PROJECTS_DATA = [
   { 
+    name: 'substrate', 
+    tagline: 'distributed agent memory',
+    desc: 'Distributed memory and retrieval system for AI agents with short-term plus vector memory, token-budgeted context assembly, knowledge graphs, Raft consensus across three nodes with a persistent log, and an Outcome Verification Layer that reweights memory from real-world results.',
+    stack: 'Bun, TypeScript, Turborepo, SQLite, Redis, gRPC, Cosine Vectors',
+    github: 'https://github.com/dev-malay/substrate',
+    status: 'Building'
+  },
+  { 
     name: 'meridian', 
     tagline: 'reliable payment processing',
     desc: 'Payment processing pipeline with a transactional outbox for reliable queueing - BullMQ priority queues, idempotent APIs with retries, a 30s reconciliation job, Prometheus metrics, OpenTelemetry tracing, and a realtime React dashboard.',

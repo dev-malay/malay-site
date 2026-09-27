@@ -14,6 +14,7 @@ interface ProjectItemProps {
   stack?: string;
   link?: string;
   github?: string;
+  status?: string;
 }
 
 function formatTags(stack?: string) {
@@ -25,7 +26,15 @@ function formatTags(stack?: string) {
     .join(' · ');
 }
 
-function ProjectItem({ name, tagline, desc, stack, link, github }: ProjectItemProps) {
+function StatusBadge({ status }: { status: string }) {
+  return (
+    <span className="rounded-sm border border-zinc-800 px-1 py-px font-mono text-[10px] uppercase tracking-wide text-zinc-500">
+      {status.toLowerCase()}
+    </span>
+  );
+}
+
+function ProjectItem({ name, tagline, desc, stack, link, github, status }: ProjectItemProps) {
   const tags = formatTags(stack);
 
   return (
@@ -41,16 +50,19 @@ function ProjectItem({ name, tagline, desc, stack, link, github }: ProjectItemPr
           )}
         </span>
         <span className="ml-auto flex shrink-0 items-center gap-3">
-          <a
-            href={link || '#'}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-zinc-500 transition-colors hover:text-white"
-            style={{ textDecoration: 'none' }}
-            title="View Project"
-          >
-            <ArrowUpRight size={16} />
-          </a>
+          {status?.toLowerCase() === 'building' && <StatusBadge status={status} />}
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-500 transition-colors hover:text-white"
+              style={{ textDecoration: 'none' }}
+              title="View Project"
+            >
+              <ArrowUpRight size={16} />
+            </a>
+          )}
           {github && (
             <a
               href={github}
