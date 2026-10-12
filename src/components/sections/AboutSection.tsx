@@ -33,7 +33,7 @@ export function AboutSection() {
             malay
           </h1>
           <p className="sub-shine font-mono text-[11px] sm:text-sm font-normal leading-none whitespace-nowrap truncate m-0">
-            max_codes · wired in · ai & infra
+            wired in · ai & infra
           </p>
         </div>
 
